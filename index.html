@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacija Lanca Snabdijevanja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Blockchain Simulator</h1>
+        </div>
+
+        <div class="main-grid">
+            <div class="left-column">
+                <div class="card">
+                    <h2>Kreiranje proizvoda</h2>
+                    <div class="form-group">
+                        <label for="productName">Naziv:</label>
+                        <input type="text" id="productName" placeholder="Unesite naziv proizvoda">
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturer">Proizvođač:</label>
+                        <input type="text" id="manufacturer" placeholder="Naziv proizvođača">
+                    </div>
+                    <div class="form-group">
+                        <label for="productType">Tip:</label>
+                        <select id="productType">
+                            <option value="hrana">Hrana</option>
+                            <option value="pice">Piće</option>
+                            <option value="elektronika">Elektronika</option>
+                            <option value="odjeca">Odjeća</option>
+                            <option value="obuca">Obuća</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="createProduct()">Kreiraj</button>
+                </div>
+
+                <div class="card">
+                    <h2>Obrada proizvoda</h2>
+                    <div class="form-group">
+                        <label for="selectProduct">Izaberi proizvod:</label>
+                        <select id="selectProduct">
+                            <option value="">Proizvod</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentStage">Trenutna faza:</label>
+                        <select id="currentStage">
+                            <option value="distributor">Distributer</option>
+                            <option value="retailer">Maloprodaja</option>
+                            <option value="customer">Kupac</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="entityName">Entitet:</label>
+                        <input type="text" id="entityName">
+                    </div>
+                    <div class="form-group">
+                        <label for="isSuccessful">Status:</label>
+                        <select id="isSuccessful">
+                            <option value="true">Uspješno</option>
+                            <option value="false">Neuspješno</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" onclick="processProduct()">Obradi</button>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="card">
+                    <h2>Proizvodi</h2>
+                    <div class="products-grid" id="productsGrid">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="blockchain-info">
+            <div class="blockchain-header">
+                <h2>Blockchain Stanje</h2>
+                <div>
+                    <span class="integrity-status" id="integrityStatus">Provjera...</span>
+                    <button class="btn btn-secondary" onclick="verifyBlockchain()">Verifikacija integriteta</button>
+                    <button class="btn" onclick="showBlockchainDetails()">Detalji blockchain-a</button>
+                </div>
+            </div>
+            <p><strong>Ukupno blokova:</strong> <span id="blockCount">0</span></p>
+            <p><strong>Poslednji blok:</strong> <span id="lastBlockTime">Nema podataka</span></p>
+        </div>
+    </div>
+
+    <div id="blockchainModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Blockchain Detalji</h2>
+            <div id="blockchainDetails"></div>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHistoryModal()">&times;</span>
+            <h2>Istorija Proizvoda</h2>
+            <div id="productHistory"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
