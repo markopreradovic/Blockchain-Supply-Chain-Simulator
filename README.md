@@ -1,4 +1,4 @@
-## 🌟 Features
+## Features
 
 - **Product Creation**: Create products with manufacturer information and type classification  
 - **Supply Chain Tracking**: Track products through different stages (Manufacturer → Distributor → Retailer → Customer)  
@@ -9,7 +9,7 @@
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)  
 - **Blockchain**: Custom implementation using Web Crypto API  
@@ -19,7 +19,7 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Core Components
 - **Block Class**: Represents individual blockchain blocks with timestamp, data, and hash calculations  
